@@ -18,44 +18,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCG-gI-IWj">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCG-gI-IWj">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Timer" id="nFd-0P-88L"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efx-5L-fdQ">
-                                <rect key="frame" x="164" y="429" width="86" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CGR-5R-Z7O">
+                                <rect key="frame" x="47" y="646" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="582705147.02232599">
+                                    <!--2019-06-20 06:32:27 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="24:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3V-uu-Ocm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="123"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUX-Og-2H0">
-                                <rect key="frame" x="96" y="495" width="58" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeA-Pm-oZb">
+                                <rect key="frame" x="62" y="420.5" width="74" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="handleStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lWQ-UM-2EZ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-Kb-kb0">
-                                <rect key="frame" x="262" y="495" width="69" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cf-oc-N7j">
+                                <rect key="frame" x="272" y="420.5" width="88" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76n-mY-5po"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="I9u-Kb-kb0" firstAttribute="leading" secondItem="efx-5L-fdQ" secondAttribute="trailing" constant="12" id="FJj-S4-N9o"/>
-                            <constraint firstItem="xUX-Og-2H0" firstAttribute="top" secondItem="efx-5L-fdQ" secondAttribute="bottom" constant="27.5" id="SAn-dX-iKj"/>
-                            <constraint firstItem="I9u-Kb-kb0" firstAttribute="leading" secondItem="xUX-Og-2H0" secondAttribute="trailing" constant="108" id="Ud4-bW-leT"/>
-                            <constraint firstItem="I9u-Kb-kb0" firstAttribute="top" secondItem="efx-5L-fdQ" secondAttribute="bottom" constant="27.5" id="VMo-Tp-2Xu"/>
-                            <constraint firstItem="efx-5L-fdQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e6b-rD-laz"/>
-                            <constraint firstItem="efx-5L-fdQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="icF-wC-0Mh"/>
-                            <constraint firstItem="efx-5L-fdQ" firstAttribute="leading" secondItem="xUX-Og-2H0" secondAttribute="trailing" constant="10" id="zkV-Ir-W0M"/>
+                            <constraint firstItem="CGR-5R-Z7O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AvM-uG-CTv"/>
+                            <constraint firstItem="CGR-5R-Z7O" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BnR-v8-wpR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k3V-uu-Ocm" secondAttribute="trailing" id="Ug2-RV-hzL"/>
+                            <constraint firstItem="k3V-uu-Ocm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eUc-1V-wQS"/>
+                            <constraint firstItem="CGR-5R-Z7O" firstAttribute="leading" secondItem="zeA-Pm-oZb" secondAttribute="trailing" constant="-89" id="fHG-RE-BLB"/>
+                            <constraint firstItem="k3V-uu-Ocm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jtL-pB-EHP"/>
+                            <constraint firstItem="3cf-oc-N7j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nFi-Sk-tzW"/>
+                            <constraint firstItem="3cf-oc-N7j" firstAttribute="leading" secondItem="CGR-5R-Z7O" secondAttribute="trailing" constant="-95" id="p9T-Qz-UEH"/>
+                            <constraint firstItem="zeA-Pm-oZb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sTn-VT-4Nx"/>
+                            <constraint firstItem="k3V-uu-Ocm" firstAttribute="top" secondItem="NCG-gI-IWj" secondAttribute="bottom" id="waJ-Dd-h3O"/>
+                            <constraint firstItem="3cf-oc-N7j" firstAttribute="leading" secondItem="zeA-Pm-oZb" secondAttribute="trailing" constant="136" id="z1N-Vh-eKE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timeField" destination="k3V-uu-Ocm" id="iKA-VW-hU4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
