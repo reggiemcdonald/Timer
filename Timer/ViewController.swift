@@ -14,12 +14,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeField: UILabel!
     
     
-
+    @IBAction func onTimeChange(_ sender: UIDatePicker) {
+        time.setTime(sec: sender.countDownDuration);
+    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        let f = onTick;
-        time = Time(sec: 10, f);
+        super.viewDidLoad();
+        time = Time(onTick);
         // Do any additional setup after loading the view.
     }
 
@@ -29,11 +30,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleResetButton(_ sender: UIButton) {
+        time.reset();
         print ("Reset pressed");
     }
     
     func onTick(_ t: TimeInterval) {
-        print(t);
+        timeField.text = t.description;
     }
 }
 
