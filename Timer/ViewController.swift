@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         time = Time(onTick);
+        
         // Do any additional setup after loading the view.
     }
 
@@ -35,7 +36,19 @@ class ViewController: UIViewController {
     }
     
     func onTick(_ t: TimeInterval) {
-        timeField.text = t.description;
+        secondsToTime(t);
+    }
+    
+    func secondsToTime(_ tX: TimeInterval) -> () {
+        var t = tX;
+        var displayTime = "";
+        let hours = floor((t / 3600));
+        t -= (hours * 3600);
+        let minutes = floor((t / 60));
+        t -= (minutes * 60);
+        let seconds = t;
+        displayTime = Int(hours).description + ":" + Int(minutes).description + ":" + Int(seconds).description;
+        timeField.text = displayTime;
     }
 }
 

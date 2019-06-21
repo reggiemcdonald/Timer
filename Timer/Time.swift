@@ -60,4 +60,8 @@ class Time {
         }
         onTick(t);
     }
+    
+    func getSeconds() -> (Second) {
+        return seconds;
+    }
 }
