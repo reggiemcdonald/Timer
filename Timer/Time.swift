@@ -53,6 +53,10 @@ class Time {
         seconds = start;
     }
     
+    func stop() {
+        timer.invalidate();
+    }
+    
     @objc func handleTick() {
         let t = decrementOneSec();
         if t <= 0 {
